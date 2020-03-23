@@ -10,9 +10,10 @@ var getElementsByClassName = function(className) {
   const result = [];
 
   const getElementsByClass = function(nodes) {
-    // check if there are any nodes in the body of the given class
+    // check if there are any nodes in the body
     if(nodes !== undefined) {
 
+      // retreive all the nodes classes
       const classList = nodes.classList;
 
       if(nodes.length) {
