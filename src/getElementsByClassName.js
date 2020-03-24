@@ -4,29 +4,29 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className) {
+var getElementsByClassName = function (className) {
   // your code here
   // data structure to store our result
   const result = [];
 
-  const getElementsByClass = function(nodes) {
-    // check if there are any nodes in the body
-    if(nodes !== undefined) {
+  const getElementsByClass = function (nodes) {
+    // check if there are any nodes in the body of the given class
+    if (nodes !== undefined) {
 
       // retreive all the nodes classes
       const classList = nodes.classList;
 
-      if(nodes.length) {
-        for(let i = 0; i < nodes.length; i++) {
+      if (nodes.length) {
+        for (let i = 0; i < nodes.length; i++) {
           let currentNode = nodes[i];
 
-          if(currentNode.classList !== undefined) {
+          if (currentNode.classList !== undefined) {
             getElementsByClass(currentNode);
           }
         }
       } else {
-        if(classList) {
-          if(classList.contains(className)) {
+        if (classList) {
+          if (classList.contains(className)) {
             result.push(nodes)
           }
 
@@ -36,9 +36,9 @@ var getElementsByClassName = function(className) {
     }
 
 
-  }
+  };
 
-  getElementsByClass(document.body)
+  getElementsByClass(document.body);
 
   // return the result
   return result;
